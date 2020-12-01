@@ -46,8 +46,7 @@ $ secret_python_others_should_never_know
 >>> import os
 >>> os.setgid(1001)
 >>> os.system('cat /home/deploy/flag')
-hitcon{use_pwntools_to_pwn_pwntools_^ovo^}
 ```
 
-(^ expanded payload)
+(^ expanded payload). I also had to redirect stdout to stderr to see the output.
 
