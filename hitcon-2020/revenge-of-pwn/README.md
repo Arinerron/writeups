@@ -24,7 +24,7 @@ hitcon{use_pwntools_to_pwn_pwntools_^ovo^}
 
 So basically I think we were supposed to [abuse pwntools `asm` function](https://github.com/FrenchRoomba/ctf-writeup-HITCON-CTF-2020/blob/master/revenge-of-pwn/README.md), but I'm pretty lazy
 
-Since we basiclaly have a shell by sending `len(cmd) + "\n" + cmd` to the socket (it executes non-ELF without shebang as `bash`), I explored a little first:
+Since we basically have a shell by sending `len(cmd) + "\n" + cmd` to the socket (it executes non-ELF without shebang as `bash`), I explored a little first:
 
 ```
 $ ls -lah $HOME
