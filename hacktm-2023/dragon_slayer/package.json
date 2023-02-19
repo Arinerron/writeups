@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.5",
+    "hardhat": "^2.12.7"
+  },
+  "name": "dragon_slayer_contracts",
+  "version": "1.0.0",
+  "main": "hardhat.config.js",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
